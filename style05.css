@@ -3,6 +3,9 @@
       }
     h3 { background-color: LightGrey;
        }
+    #link {
+        font-color: blue;
+    }
     #SandyPoint {
       border: yellow dashed;
       padding: 5px;
