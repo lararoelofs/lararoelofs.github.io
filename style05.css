@@ -1,5 +1,6 @@
 #aboutme {
     position: sticky;
+    top: 0;
 }
     p { text-align: justify;
        font-family: perpetua;
