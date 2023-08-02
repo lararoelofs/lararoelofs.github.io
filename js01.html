@@ -3,6 +3,7 @@
 <head>
   <title> Lara Web Page, js01 </title>
   <link rel="stylesheet" href="style05.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </head>
 <!---This is my js 01 webpage--->
 <body>
@@ -11,12 +12,27 @@
   <h1 style="font-family: serif; background-color: #CBC3E3;"> About Me </h1>
 </div>
   <h3 style="font-family: serif;"> Who I am </h3>
-  <p class="data"> 
-    <script>
-      document.write("My name is Lara Roelofs. I am from <em>Massachusetts</em>, and I grew up on the coast with my two siblings (I'm a middle child) and two dogs. I am a student at Dartmouth College, in the class of 2025. This is my first web page, for an assignment in GEOG 50.02, Web Mapping & Application.");
-      console.log("I wrote to the console log!");
-    </script>
+  <button id="WhoIAm">
+    Click here to find out!
+  </button>
+  <p class="data" hidden id="WhoIAm"> 
+     My name is Lara Roelofs. I am from <em>Massachusetts</em>, and I grew up on the coast with my two siblings (I'm a middle child) and two dogs. I am a student at Dartmouth College, in the class of 2025. This is my first web page, for an assignment in GEOG 50.02, Web Mapping & Application.
   </p>
+
+  <script>
+  //  $("p") <-- this will reference all of the <p> tags
+  //  $("#job") <-- this will reference all "#job" id's
+  //  $(".data") <-- this will reference all ".data" classes
+  //  use jQuery to listen for a button click
+  //  toggle the hidden job message
+    $("button#WhoIAm").click(
+      function() {
+        $("p#WhoIAm).toggle();
+      }
+    );
+      
+  </script>
+  
   <div id="LixiandStevieRay"> 
     <img id="lixiandstevieray-img" src="IMG_9491.jpeg"> 
     <br>
