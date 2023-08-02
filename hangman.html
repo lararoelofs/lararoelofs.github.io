@@ -19,7 +19,7 @@
         
           $(".letter").click(
             function()  {
-              var id = $(this).attribute('id');
+              var id = $(this).attr('id');
               console.log("Clicked on " + id);
 
               if (guesses.includes(id)) {
