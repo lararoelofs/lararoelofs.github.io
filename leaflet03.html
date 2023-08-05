@@ -9,27 +9,26 @@
             html, body {height: 100%; margin: 0, padding: 0;}
         </style>
 
-<script src="Quabbin_to_Cardigan_Supporting_Landscapes.geojson"></script>
+<script src="NH_Designated_Rivers_24K.geojson"></script>
 
-<script src="NH_Coastal_Restoration_Database.geojson"></script>
+
         
         <script>
-          var coastalrestLayer; 
+          var riverLayer; 
             var OpenStreetMap_HOT = L.tileLayer('https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png',
             { maxZoom: 19, 
             attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>, Tiles courtesy of <a href = "http://hot.osm.org"> HOT OSM</a>'
                      })
             
-           function markerSymbology(feature) {
-               var projectType = feature.properties.Project_Type;
-              // var linewidth = 2;
-               var markerColor = "#a6cee3";
+           function lineSymbology(feature) {
+               var riverName = feature.properties.River_Name;
+                var linewidth = 2;
+               var lineColor = "#a6cee3";
 
-               if (projectType == "Salt Marsh Restoration ") {markerColor = "#33a02c"; }
-               if (projectType == "Dune Restoration ") {markerColor = "#fb9a99"; }
+               if (riverName == "Conneticut River") {markerColor = "#33a02c"; }
             
            return {
-               color: markerColor,
+               color: lineColor,
                opacity: 1
                };
            }
@@ -50,12 +49,12 @@
                  //                                           }
                  //      }).addTo(map);
 
-               coastalrestLayer = L.geoJson(coastalrest_geojson,
-                      { style: markerSymbology,
+               riverLayer = L.geoJson(river_geojson,
+                      { style: lineSymbology,
                     
                     onEachFeature: function(feature, layer) 
-                    {layer.bindPopup("<b>Project: " + feature.properties.Project_Name + "</b><br>" + 
-                                     "Land Type: " + feature.properties.Project_Type + "<br>" + "Year of Implementation: " + feature.properties.Year_of_Implementation);
+                    {layer.bindPopup("<b>Project: " + feature.properties.River_Name + "</b><br>" + 
+                                     "Length in Miles: " + feature.properties.LENGTH_MI + "<br>" + "Area: " +feature.properties.Class);
                                                             }
                       }).addTo(map);
 
@@ -65,7 +64,7 @@
         </script>
     </head>
     <body onload="initialize()">
-      <h1>New Hampshire Coastal and Mountain Conservation</h1>
+      <h1>New Hampshire Rivers</h1>
       <div id="map"></div>
     </body>
 </html>
