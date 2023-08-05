@@ -27,14 +27,14 @@
                         })
 
 
-                L.geoJson(supportinglandscape_geojson
+                L.geoJson(supportinglandscape_geojson,
                           { color: "green",
                     weight: 5,
                     opacity: .5, 
                     onEachFeature: function(feature, layer) {layer.bindPopup("<b>Supporting Landscape: " + feature.properties.Type + "</b>");
                           }).addTo(map);
 
-                L.geoJson(coastalrest_geojson
+                L.geoJson(coastalrest_geojson,
                       { color: "blue",
                     weight: 5,
                     opacity: .5
@@ -46,7 +46,7 @@
         </script>
     </head>
     <body onload="initialize()">
-      <h1>Hello Campus!</h1>
+      <h1>Hello Campus</h1>
       <div id="map"></div>
     </body>
 </html>
