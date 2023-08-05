@@ -30,7 +30,8 @@
                 L.geoJson(supportinglandscape_geojson
                           { color: "green",
                     weight: 5,
-                    opacity: .5
+                    opacity: .5, 
+                    onEachFeature: function(feature, layer) {layer.bindPopup("<b>Supporting Landscape: " + feature.properties.Type + "</b>");
                           }).addTo(map);
 
                 L.geoJson(coastalrest_geojson
