@@ -51,7 +51,7 @@
                  //      }).addTo(map);
 
                coastalrestLayer = L.geoJson(coastalrest_geojson,
-                      { style: lineSymbology,
+                      { style: markerSymbology,
                     
                     onEachFeature: function(feature, layer) 
                     {layer.bindPopup("<b>Project: " + feature.properties.Project_Name + "</b><br>" + 
