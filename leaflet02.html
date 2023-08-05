@@ -38,7 +38,11 @@
                 L.geoJson(coastalrest_geojson,
                       { color: "blue",
                     weight: 5,
-                    opacity: .5
+                    opacity: .5,
+                    
+                    onEachFeature: function(feature, layer) {layer.bindPopup("<b>: " + feature.properties.Project_Type + "</b>");
+                                                            }
+                      
                       }).addTo(map);
 
 
