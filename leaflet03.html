@@ -22,11 +22,11 @@
             
            function lineSymbology(feature) {
                var projectType = feature.properties.Project_Type;
-               var linewidth = 2;
-               var lineColor = "#a6cee3";
+              // var linewidth = 2;
+               var markerColor = "#a6cee3";
 
-               if (Project_Type == "Salt Marsh Restoration") {lineColor = "#33a02c"; linewidth = 4; }
-               if (Project_Type == "Dune Restoration") {lineColor = "#fb9a99"; linewidth = 4; }
+               if (Project_Type == "Salt Marsh Restoration") {markerColor = "#33a02c"; }
+               if (Project_Type == "Dune Restoration") {markerColor = "#fb9a99"; }
             
            return {
                color: lineColor,
