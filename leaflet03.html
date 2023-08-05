@@ -25,7 +25,7 @@
                 var linewidth = 2;
                var lineColor = "#a6cee3";
 
-               if (riverName == "Conneticut River") {markerColor = "#33a02c"; }
+               if (riverName == "Connecticut River") {markerColor = "#33a02c"; }
             
            return {
                color: lineColor,
@@ -54,7 +54,7 @@
                     
                     onEachFeature: function(feature, layer) 
                     {layer.bindPopup("<b>Project: " + feature.properties.River_Name + "</b><br>" + 
-                                     "Length in Miles: " + feature.properties.LENGTH_MI + "<br>" + "Area: " +feature.properties.Class);
+                                     "Length in Miles: " + feature.properties.LENGTH_MI + "<br>" + "Area: " + feature.properties.Class);
                                                             }
                       }).addTo(map);
 
