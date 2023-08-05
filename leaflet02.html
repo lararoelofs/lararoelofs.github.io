@@ -1,32 +1,51 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Hello Osco, Switzerland!</title>
+        <title>Hello Campus</title>
         <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
         <style>
             #map {height: 400px; width: 700px; }
             html, body {height: 100%; margin: 0, padding: 0;}
         </style>
+
+<script src="Quabbin_to_Cardigan_Supporting_Landscapes.geojson"></script>
+
+<script src="NH_Coastal_Restoration_Database.geojson"></script>
         
         <script>
             var OpenStreetMap_HOT = L.tileLayer('https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png',
             { maxZoom: 19, 
             attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>, Tiles courtesy of <a href = "http://hot.osm.org"> HOT OSM</a>'
                      })
-
             
             function initialize() {
                 var map = L.map('map', {
-                    center: [46.4932, 8.7824], 
+                    center: [43.7022, -72.2896], 
                     zoom: 15, 
                     layers: [OpenStreetMap_HOT]
                         })
+
+
+                L.geoJson(supportinglandscape_geojson
+                          { color: "green",
+                    weight: 5,
+                    opacity: .5
+                          }).addTo(map);
+
+                L.geoJson(coastalrest_geojson
+                      { color: "blue",
+                    weight: 5,
+                    opacity: .5
+                          }).addTo(map);
+
+
+                
                 }
         </script>
     </head>
     <body onload="initialize()">
-      <h1>Hello Osco, Switzerland!</h1>
+      <h1>Hello Campus!</h1>
       <div id="map"></div>
     </body>
 </html>
