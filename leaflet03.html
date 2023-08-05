@@ -20,6 +20,21 @@
             attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>, Tiles courtesy of <a href = "http://hot.osm.org"> HOT OSM</a>'
                      })
             
+           function lineSymbology(feature) {
+               var projectType = features.properties.Project_Type;
+               var linewidth = 2;
+               var lineColor = "#a6cee3;"
+
+               if (Project_Type == Salt Marsh Restoration) {lineColor = "#33a02c"; linewidth = 4; }
+               if (Project_Type == Dune Restoration) {lineColor = "#fb9a99"; linewidth = 4; }
+            
+           return {
+               color: lineColor,
+               weight: linewidth,
+               opacity: 1
+           };
+           }
+               
             function initialize() {
                 var map = L.map('map', {
                     center: [43.2081, -71.5376], 
@@ -37,9 +52,7 @@
                  //      }).addTo(map);
 
                coastalrestLayer = L.geoJson(coastalrest_geojson,
-                      { color: "blue",
-                    weight: 5,
-                    opacity: .5,
+                      { style: lineSymbology,
                     
                     onEachFeature: function(feature, layer) 
                     {layer.bindPopup("<b>Project: " + feature.properties.Project_Name + "</b><br>" + 
