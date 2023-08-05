@@ -22,10 +22,10 @@
             
            function lineSymbology(feature) {
                var riverName = feature.properties.River_Name;
-                var linewidth = 2;
-               var lineColor = "#a6cee3";
+                var linewidth = 1;
+               var lineColor = "#984ea3";
 
-               if (riverName == "Connecticut River") {lineColor = "#33a02c"; }
+               if (riverName == "Connecticut River") {lineColor = "#377eb8"; lineWidth = 3;}
             
            return {
                color: lineColor,
