@@ -16,8 +16,8 @@
 
         
         <script>
-          var riversLayers; 
-            var riversVisible = false; 
+          var riverLayer; 
+            var riverVisible = false; 
             
             var OpenStreetMap_HOT = L.tileLayer('https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png',
             { maxZoom: 19, 
@@ -63,12 +63,12 @@
                       });
 
                 $("toggleRivers").click( function() {
-                    if (riversVisible) {
-                        riversVisible = false;
-                        riversLayers.removefrom(map);
+                    if (riverVisible) {
+                        riverVisible = false;
+                        riverLayer.removefrom(map);
                     } else {
-                        riversVisile = true;
-                        riversLayers.addTo(map);
+                        riverVisible = true;
+                        riverLayer.addTo(map);
                     }
                 })
         
