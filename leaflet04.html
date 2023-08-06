@@ -71,7 +71,8 @@
                     {layer.bindPopup("<b>Project: " + feature.properties.River_Name + "</b><br>" + 
                                      "Length in Miles: " + feature.properties.LENGTH_MI + "<br>" + "Area: " + feature.properties.Class);
                                                             }
-                      });
+                      }).addTo(map);
+		      
                 $("#toggleRiver").show();
                 $("#toggleRiver").click( function() {
                     if (riverVisible) {
