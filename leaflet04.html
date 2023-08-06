@@ -53,7 +53,7 @@
 		    var control = L.control.layers(baseMaps).addTo(map);
 
             var response = $.ajax({
-              url: "https://nhgeodata.unh.edu/nhgeodata/rest/services/EC/EC_OpenData_MiscVectorData/MapServer/2?f=pjson",
+              url: "https://nhgeodata.unh.edu/nhgeodata/rest/services/GG/SoilsResources/MapServer/0?f=pjson",
               dataType: "json",
               success: console.log("rivers data loaded!"),
               error: function(xhr) {alert(xhr.statusText);
