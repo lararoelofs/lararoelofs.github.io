@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>New Hampshire Rivers</title>
+        <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <style>
+            #map {height: 400px; width: 700px; }
+            html, body {height: 100%; margin: 0; padding: 0;}
+            #button {padding: 10px; background: #f3d1c9; }
+        </style>
+
+
+        
+        <script>
+            var riverVisible = true; 
+            
+            var OpenStreetMap_HOT = L.tileLayer('https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png',
+            { maxZoom: 19, 
+            attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>, Tiles courtesy of <a href = "http://hot.osm.org"> HOT OSM</a>'
+                     })
+            
+        var Esri_WorldImagery = new L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+	attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community'
+});
+            
+            function lineSymbology(feature) {
+               var riverName = feature.properties.River_Name;
+                var linewidth = 1;
+               var lineColor = "#984ea3";
+
+               if (riverName == "Connecticut River") {lineColor = "#377eb8"; lineWidth = 3;}
+            
+           return {
+               color: lineColor,
+               opacity: 1
+               };
+           }
+               
+            function initialize() {
+                var map = L.map('map', {
+                    center: [43.7022, -72.2896], 
+                    zoom: 9, 
+		   layers: [OpenStreetMap_HOT]
+                
+                        });
+
+		    var baseMaps = {"OSM" : OpenStreetMap_HOT, 
+				    "ESRI" : Esri_WorldImagery
+				   }
+
+		    var control = L.control.layers(baseMaps).addTo(map);
+
+            var response = $.ajax({
+              url: "2_NH_Designated_Rivers_24K.geojson",
+              dataType: "json",
+              success: console.log("rivers data loaded!"),
+              error: function(xhr) {alert(xhr.statusText);
+                                   }
+                });
+
+              $.when(response).done(function() {
+
+                
+
+               riverLayer = L.geoJson(response.responseJSON,
+                      { style: lineSymbology,
+                    
+                    onEachFeature: function(feature, layer) 
+                    {layer.bindPopup("<b>Project: " + feature.properties.River_Name + "</b><br>" + 
+                                     "Length in Miles: " + feature.properties.LENGTH_MI + "<br>" + "Area: " + feature.properties.Class);
+                                                            }
+                      });
+                $("#toggleRiver").show();
+                $("#toggleRiver").click( function() {
+                    if (riverVisible) {
+                        riverVisible = false;
+                        riverLayer.removeFrom(map);
+                    } else {
+                        riverVisible = true;
+                        riverLayer.addTo(map);
+                    }
+                })
+              });
+
+                }
+        </script>
+    </head>
+    <body onload="initialize()">
+      <h1>New Hampshire Rivers</h1>
+      <div id="map"></div>
+        <div id="buttons">
+            <button id="toggleRiver" hidden>Toggle the River Layer.</button>
+        </div>
+    </body>
+</html>
