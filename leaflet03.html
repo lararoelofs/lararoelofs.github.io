@@ -7,6 +7,7 @@
         <style>
             #map {height: 400px; width: 700px; }
             html, body {height: 100%; margin: 0; padding: 0;}
+            #button {padding: 10px; background: #f3d1c9; }
         </style>
 
 <script src="NH_Designated_Rivers_24K.geojson"></script>
@@ -66,5 +67,8 @@
     <body onload="initialize()">
       <h1>New Hampshire Rivers</h1>
       <div id="map"></div>
+        <div id="buttons">
+            <button id="toggleRivers">Toggle the Rivers Layer.</button>
+        </div>
     </body>
 </html>
