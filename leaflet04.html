@@ -53,7 +53,7 @@
 		    var control = L.control.layers(baseMaps).addTo(map);
 
             var response = $.ajax({
-              url: "https://nhgeodata.unh.edu/nhgeodata/rest/services/GG/SoilsResources/MapServer/0?f=pjson",
+              url: "Soil_Survey_Geographic_(SSURGO)_database_for_New_Hampshire.geojson",
               dataType: "json",
               success: console.log("rivers data loaded!"),
               error: function(xhr) {alert(xhr.statusText);
