@@ -10,7 +10,7 @@
         <style>
             #map {height: 800px; width: 100%px; margin: 25px}
             html, body {height: 100%; margin: 0; padding: 0;}
-            #button {padding: 10px; background: #f3d1c9; }
+            #button {padding: 10px; background: #f3d1c9; margin: 25px}
         </style>
 
 
@@ -39,10 +39,10 @@
 <script src="Invasive_Species.geojson"></script>
         
 <script>
-          var invasiveLayer; 
+        var invasiveLayer; 
             var invasiveVisible = false; 
             
-            var OpenStreetMap_HOT = L.tileLayer('https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png',
+        var OpenStreetMap_HOT = L.tileLayer('https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png',
             { maxZoom: 19, 
             attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>, Tiles courtesy of <a href = "http://hot.osm.org"> HOT OSM</a>'
                      })
@@ -64,7 +64,7 @@
          //      };
       //    }
                
-            function initialize() {
+	function initialize() {
                 var map = L.map('map', {
                     center: [43.7022, -72.2896], 
                     zoom: 9, 
@@ -101,7 +101,7 @@
 			
 		    onEachFeature: function(feature, layer) 
 			    {layer.bindPopup("<b>Invasive Species: " + feature.properties.InvasiveName + "</b><br>" 
-					+ "Plant Description: " + feature.properties.PlantDescription + "<br>" 
+					// + "Plant Description: " + feature.properties.PlantDescription + "<br>" 
 					+ "Observation Date: " + feature.properties.ObservationDate + "<br>"
 					//+ "Treatment Type: " + feature.properties.TreatmentType + "<br>" 
 					//+ "Treatment Effectiveness: " + feature.properties.TreatmentEffectiveness
@@ -121,9 +121,10 @@
                     }
                 })
         
-
-                
                 }
+
+
+	
         </script>
     </head>
     
