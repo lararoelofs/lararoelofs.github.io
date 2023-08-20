@@ -52,6 +52,10 @@ h3 {
     border-radius: 10px; 
 }
 
+#invasivemap {
+    background-color: #E7DCD5;
+    }
+
 .ptext .border {
     background-color: #111;
     color: #fff;
