@@ -41,7 +41,7 @@
             <button id="toggleinvasive">Click to see Vermont Invasives :( </button>
         </div>
 	<div id="buttons">
-            <button id="togglebiohotspot">Click to hide Biological Hotspots </button>
+            <button id="togglebiohotspot">Click to show Biological Hotspots </button>
         </div>
 	
 </body>
@@ -55,7 +55,7 @@
 		var invasiveVisible = false; 
 
 	var biohotspotLayer;
-		var biohotspotVisible = true;
+		var biohotspotVisible = false;
             
         var OpenStreetMap_HOT = L.tileLayer('https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png',
             { maxZoom: 19, 
