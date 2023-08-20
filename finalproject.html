@@ -93,7 +93,7 @@
    			 }
 			
                     
-                onEachFeature: function(feature, layer) 
+                onEachFeature: function(feature, layer)
                     {layer.bindPopup("<b>Invasive Species: " + feature.properties.InvasiveName + "</b><br>" + 
                                      "Plant Description: " + feature.properties.PlantDescription + "<br>" + "Treatment Type: " + feature.properties.TreatmentType + "<br>" + "Treatment Effectiveness: " + feature.properties.TreatmentEffectiveness);
                                                             }
