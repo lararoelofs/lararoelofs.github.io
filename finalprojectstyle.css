@@ -1,0 +1,58 @@
+p {
+    margin-left: 45px;
+    margin-right: 45px;
+    text-align: center;
+    font-family: "Times New Roman", Times, serif;
+}
+
+h1 {
+        text-align: center;
+
+    font-family: "Impact", sans-serif;
+   
+}
+
+h3 {
+    margin-left: 35px;
+    margin-right: 35px; 
+    text-align: center;
+    color: #000;
+    font-size: 20px;
+    letter-spacing: 8px;
+    padding: 20px;
+    border-radius: 10px; 
+    background-color: #4b3a26;
+    color: #fff;
+    padding: 20px;
+   
+}
+
+
+.title {
+    background: url("mushrooms-4434962_1280.jpg");
+    min-height: 100vh; /* Use viewport height for minimum height */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+}
+
+.ptext {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #000;
+    font-size: 27px;
+    letter-spacing: 8px;
+    text-transform: uppercase;
+    background-color: #111;
+    padding: 20px;
+    border-radius: 10px; 
+}
+
+.ptext .border {
+    background-color: #111;
+    color: #fff;
+    padding: 20px;
