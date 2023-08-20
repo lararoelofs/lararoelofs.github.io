@@ -40,7 +40,10 @@
         
 <script>
         var invasiveLayer; 
-            var invasiveVisible = false; 
+		var invasiveVisible = false; 
+
+	var biohotspotLayer;
+		var biohotspotVisible = true;
             
         var OpenStreetMap_HOT = L.tileLayer('https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png',
             { maxZoom: 19, 
@@ -120,8 +123,31 @@
                         invasiveLayer.addTo(map);
                     }
                 })
-        
-                }
+
+
+		
+
+	biohotspotLayer = L.geoJson(biohotspots_geojson, {
+		    onEachFeature: function(feature, layer) 
+			    {layer.bindPopup("<b>Biological Hotspot</b>"
+					     );
+                                	}
+		});
+
+		
+
+                $("#togglebiohotspot").click( function() {
+                    if (biohotspotVisible) {
+                        biohotspotVisible = false;
+                        biohotspotLayer.removeFrom(map);
+                    } else {
+                        biohotspotVisible = true;
+                        biohotspotLayer.addTo(map);
+                    }
+                })
+
+		
+	 }
 
 
 	
