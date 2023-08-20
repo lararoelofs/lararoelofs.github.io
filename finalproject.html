@@ -31,10 +31,10 @@
 	attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community'
 });
             
-         ///   function pointSymbology(feature) {
-           ///    var invasiveName = feature.properties.River_Name;
-           ///     var linewidth = 1;
-          ///     var lineColor = "#984ea3";
+            function pointSymbology(feature) {
+               var invasiveName = feature.properties.River_Name;
+                var linewidth = 1;
+               var lineColor = "#984ea3";
 
           ///     if (riverName == "Connecticut River") {lineColor = "#377eb8"; lineWidth = 3;}
             
@@ -42,7 +42,7 @@
          ///      color: pointColor,
          //      opacity: 1
          //      };
-         //  }
+          }
                
             function initialize() {
                 var map = L.map('map', {
