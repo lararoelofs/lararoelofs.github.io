@@ -37,17 +37,17 @@ h3 {
     background-attachment: fixed;
 }
 
-.ptext {
+.titletext {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
-    color: #000;
-    font-size: 27px;
+    color: #08360F;
+    font-size: 30px;
     letter-spacing: 8px;
     text-transform: uppercase;
-    background-color: #111;
+    background-color: #F1E8CE;
     padding: 20px;
     border-radius: 10px; 
 }
