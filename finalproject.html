@@ -31,7 +31,7 @@
 	attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community'
 });
             
-         ///   function lineSymbology(feature) {
+         ///   function pointSymbology(feature) {
            ///    var invasiveName = feature.properties.River_Name;
            ///     var linewidth = 1;
           ///     var lineColor = "#984ea3";
@@ -39,7 +39,7 @@
           ///     if (riverName == "Connecticut River") {lineColor = "#377eb8"; lineWidth = 3;}
             
          ///  return {
-         ///      color: lineColor,
+         ///      color: pointColor,
          //      opacity: 1
          //      };
          //  }
@@ -60,13 +60,13 @@
 
 
                invasiveLayer = L.geoJson(invasives_geojson,
-             //         { style: lineSymbology,
+                      { style: lineSymbology,
                     
-            //        onEachFeature: function(feature, layer) 
-                //    {layer.bindPopup("<b>Project: " + feature.properties.River_Name + "</b><br>" + 
-              //                       "Length in Miles: " + feature.properties.LENGTH_MI + "<br>" + "Area: " + feature.properties.Class);
-              //                                              }
-                     // }
+                    onEachFeature: function(feature, layer) 
+                    {layer.bindPopup("<b>Invasive Species: " + feature.properties.InvasiveName + "</b><br>" + 
+                                     "Plant Description: " + feature.properties.PlantDescription + "<br>" + "Treatment Type: " + feature.properties.TreatmentType + + "<br>" + "Treatment Effectiveness: " + feature.properties.TreatmentEffectiveness);
+                                                            }
+                      }
 					);
 
                 $("#toggleinvasive").click( function() {
