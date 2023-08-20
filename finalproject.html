@@ -19,7 +19,7 @@
 
         
         <script>
-          var InvasiveLayer; 
+          var invasiveLayer; 
             var invasiveVisible = false; 
             
             var OpenStreetMap_HOT = L.tileLayer('https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png',
@@ -32,17 +32,17 @@
 });
             
          ///   function lineSymbology(feature) {
-            ///   var invasiveName = feature.properties.River_Name;
-            ///    var linewidth = 1;
-           ///    var lineColor = "#984ea3";
+           ///    var invasiveName = feature.properties.River_Name;
+           ///     var linewidth = 1;
+          ///     var lineColor = "#984ea3";
 
           ///     if (riverName == "Connecticut River") {lineColor = "#377eb8"; lineWidth = 3;}
             
-     ///      return {
-      ///         color: lineColor,
-     ///          opacity: 1
-     ///          };
-     ///      }
+         ///  return {
+         ///      color: lineColor,
+         //      opacity: 1
+         //      };
+         //  }
                
             function initialize() {
                 var map = L.map('map', {
@@ -60,13 +60,14 @@
 
 
                invasiveLayer = L.geoJson(invasives_geojson,
-                      { style: lineSymbology,
+             //         { style: lineSymbology,
                     
             //        onEachFeature: function(feature, layer) 
                 //    {layer.bindPopup("<b>Project: " + feature.properties.River_Name + "</b><br>" + 
               //                       "Length in Miles: " + feature.properties.LENGTH_MI + "<br>" + "Area: " + feature.properties.Class);
               //                                              }
-                      });
+                     // }
+					);
 
                 $("#toggleinvasive").click( function() {
                     if (invasiveVisible) {
