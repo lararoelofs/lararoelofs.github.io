@@ -5,6 +5,8 @@
         <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+ 	<link rel="stylesheet" href= "finalproject.css">
         <style>
             #map {height: 400px; width: 700px; }
             html, body {height: 100%; margin: 0; padding: 0;}
@@ -16,7 +18,19 @@
 <script src="Invasive_Species.geojson"></script>
       
 
+<body>
+<div class = "title">
+            <div class = "ptext">
+                 <span class = "border">
+			
+			 Invasive Species of Vermont 
+        
+                  </span>
+            </div>
+        </div>
 
+	
+</body>
         
         <script>
           var invasiveLayer; 
@@ -42,7 +56,7 @@
          ///      color: pointColor,
          //      opacity: 1
          //      };
-          }
+      //    }
                
             function initialize() {
                 var map = L.map('map', {
