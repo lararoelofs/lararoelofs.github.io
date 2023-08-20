@@ -87,11 +87,12 @@
     fillOpacity: 0.8
 };
            
-		invasiveLayer = L.geoJson(invasives_geojson,
-                      { pointToLayer: function (feature, latlng) {
+		invasiveLayer = L.geoJson(invasives_geojson, {
+                      pointToLayer: function (feature, latlng) {
 
 			 if (feature.properties.InvasiveName === "Emerald Ash Borer") {
                		 geojsonMarkerOptions.fillColor = "#D7EE1B";
+			 }
 			      
       			  return L.circleMarker(latlng, geojsonMarkerOptions);
    			 }
