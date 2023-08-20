@@ -18,9 +18,15 @@
 <script src="Invasive_Species.geojson"></script>
       
 
-<body>
+<body onload="initialize()">
+      <h1>Vermont Invasive Species Map</h1>
+      <div id="map"></div>
+        <div id="buttons">
+            <button id="toggleinvasive">Click to see Vermont Invasives :( </button>
+        </div>
+
 <div class = "title">
-            <div class = "ptext">
+            <div class = "titletext">
                  <span class = "border">
 			
 			 Invasive Species of Vermont 
@@ -114,11 +120,5 @@
                 }
         </script>
     </head>
-    <body onload="initialize()">
-      <h1>Vermont Invasive Species</h1>
-      <div id="map"></div>
-        <div id="buttons">
-            <button id="toggleinvasive">Click to see Vermont Invasives :( </button>
-        </div>
-    </body>
+    
 </html>
