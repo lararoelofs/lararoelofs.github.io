@@ -85,18 +85,16 @@ img {
 }
 
 .gallerycontainer {
-    width: 80%;
-    margin: 100px auto 50px;
-    text-align: center;
-    padding: 20px;
+    display: flex;
 }
 .gallery {
-    display: inline-block;
     text-align: center;
-    vertical-align: top;
-    margin: 10px;
+    height: auto;
+}
+.gallery img {
+    max-width: 100%;
+    height: auto;
 }
 .desc {
-  padding: 15px;
-  text-align: center;
+  font-size: 16px;
 }
