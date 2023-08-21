@@ -19,7 +19,13 @@ h4 {
 
 img { 
     width: 30%; height: 400px;
+    margin: 35px;
+    float: left;
 }
+
+#campuseabtext {
+    float: right;
+    }
 
 
 .title {
