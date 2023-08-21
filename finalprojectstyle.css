@@ -27,6 +27,14 @@ img {
     float: right;
     }
 
+#ref {   
+    margin-left: 50px;
+    margin-right: 50px;
+    text-align: left;
+    font-family: "Times New Roman", Times, serif;
+    text-size: 12;
+}
+
 
 .title {
     background: url("https://modernfarmer.com/wp-content/uploads/2021/09/shutterstock_1526389829-1200x800.jpg");
