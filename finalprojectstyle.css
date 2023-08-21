@@ -17,6 +17,7 @@ h4 {
     text-align: center;
     font-family: "Times New Roman", sans-serif;
     font-weight: bold;
+    margin: 35px, 35px, 0px, 35px;
 }
 
 .container {
@@ -38,7 +39,7 @@ img {
     }
 
 #ref {   
-    margin: 35px;
+    margin: 0px, 35px, 35px, 35px;
     text-align: left;
     font-family: "Times New Roman", Times, serif;
     font-size: 14px;
