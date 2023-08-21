@@ -58,8 +58,8 @@ img {
 
 .titletext {
     position: absolute;
-    top: 75%;
-    left: 75%;
+    top: 50%;
+    left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
     color: #08360F;
@@ -67,7 +67,7 @@ img {
     letter-spacing: 8px;
     text-transform: uppercase;
     background-color: #F1E8CE;
-    padding: 20px;
+    padding: 35px;
     border-radius: 10px; 
 }
 
