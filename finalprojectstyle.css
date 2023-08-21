@@ -84,7 +84,7 @@ img {
     padding: 20px;
 }
 
-.gallery {
+.gallerycontainer {
   width: 80%;
     margin: 100px auto 50px;
     display: grid;
