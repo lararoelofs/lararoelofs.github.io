@@ -85,10 +85,8 @@ img {
 }
 
 .gallerycontainer {
-  align-items: center; 
-  float: left;
+    display: flex;
 }
 .image{
-    float: left;
   padding: 5px;
 }
